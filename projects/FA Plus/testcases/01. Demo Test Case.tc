@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <overview>
+        <author></author>
+        <tmsid></tmsid>
+        <comment></comment>
+    </overview>
+    <before />
+    <case>
+        <step id="web_browser_open" comment="打开浏览器，进入Compass登录页面">
+            <param id="url">http://aqatest.calix.com/login</param>
+            <param id="type">Chrome</param>
+        </step>
+        <step id="fap_login_2016-01-04_23.11.23.910" comment="登录Compass系统">
+            <param id="url">http://aqatest.calix.com/login</param>
+            <param id="user">calixtest@mypremieronline.com</param>
+            <param id="pwd">Calix123</param>
+        </step>
+        <step id="com.calix.ccp.Web:navigation_2016-01-04_23.01.25.293" comment="选择导航树中的FA Plus节点">
+            <param id="parent">Flow ANALYZE Plus</param>
+        </step>
+        <step id="com.calix.ccp.Web:selectMenu_2016-01-04_23.46.03.088" comment="菜单选择 Network -&gt; Traffic">
+            <param id="path">Network/Traffic</param>
+        </step>
+        <step id="com.calix.fap.Web:setValue_2016-01-05_17.38.44.202" comment="日期输入： 当前日期前三年">
+            <param id="name">Date From</param>
+            <param id="value">YEAR - 3</param>
+        </step>
+        <step id="com.calix.fap.Web:setValue_2016-01-05_17.38.44.202" comment="下拉列表选择">
+            <param id="name">Criteria</param>
+            <param id="value">Rate</param>
+        </step>
+        <step id="com.calix.fap.Web:clickButton_2016-01-06_23.07.01.544" comment="点击Run按钮" />
+        <step id="file_delete_local_file" comment="删除本地Report文件，如果存在的话">
+            <param id="path">C:\Users\wwu\Downloads\NetworkTrafficReport.csv</param>
+        </step>
+        <step id="file_verify_file_exist" comment="校验本地不存在这个Report文件">
+            <param id="path">C:\Users\wwu\Downloads\NetworkTrafficReport.csv</param>
+            <param id="exist">false</param>
+        </step>
+        <step id="com.calix.fap.Web:export_2016-01-06_23.10.37.124" comment="导出CSV文件">
+            <param id="type">CSV</param>
+        </step>
+        <step id="common_sleep" comment="等待10秒，等文件下载。">
+            <param id="millis">10000</param>
+        </step>
+        <step id="file_verify_file_exist" comment="校验本地已经存在这个Report文件">
+            <param id="path">C:\Users\wwu\Downloads\NetworkTrafficReport.csv</param>
+        </step>
+        <step id="file_delete_local_file" comment="删除备份文件，如果存在的话">
+            <param id="path">C:\Users\wwu\Downloads\NetworkTrafficReport_backup.csv</param>
+        </step>
+        <step id="file_rename_local_file" comment="重命名Report文件">
+            <param id="src">C:\Users\wwu\Downloads\NetworkTrafficReport.csv</param>
+            <param id="dst">C:\Users\wwu\Downloads\NetworkTrafficReport_backup.csv</param>
+        </step>
+        <step id="fap_logout_2016-01-08_15.09.16.230" comment="登出Compass" />
+        <step id="common_execute_cmd" comment="随便敲点命令行">
+            <param id="command">dir/w</param>
+        </step>
+    </case>
+    <after />
+    <fault />
+</root>
+

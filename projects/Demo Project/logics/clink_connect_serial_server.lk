@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <step id="telnet_connect" comment="">
+        <param id="ip">&amp;ip</param>
+        <param id="port">&amp;port</param>
+        <param id="prompt">&amp;{prompt}.*?#</param>
+    </step>
+    <step id="telnet_send" comment="" />
+    <step id="telnet_wait_for_result" comment="">
+        <param id="cmd">exit</param>
+        <param id="value">Press RETURN to get started.</param>
+        <param id="prompt">(Press RETURN to get started|Password:|&amp;{prompt}&gt;|&amp;{prompt}.*?#)</param>
+        <param id="interval">2000</param>
+    </step>
+    <step id="common_sleep" comment="">
+        <param id="millis">2000</param>
+    </step>
+    <step id="telnet_send" comment="" />
+    <step id="telnet_receive" comment="">
+        <param id="prompt">&amp;{prompt}&gt;</param>
+    </step>
+    <step id="telnet_send" comment="">
+        <param id="cmd">en</param>
+    </step>
+    <step id="telnet_receive" comment="">
+        <param id="prompt">Password:</param>
+    </step>
+    <step id="telnet_send" comment="">
+        <param id="cmd">&amp;password</param>
+    </step>
+    <step id="telnet_receive" comment="">
+        <param id="prompt">&amp;{prompt}#</param>
+    </step>
+</root>
+

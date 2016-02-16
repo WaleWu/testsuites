@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <overview>
+        <author></author>
+        <tmsid></tmsid>
+        <comment></comment>
+    </overview>
+    <before />
+    <case>
+        <step id="ssh_connect" comment="Open a SSH connection">
+            <param id="host">10.245.252.104</param>
+            <param id="user">root</param>
+            <param id="pwd">cmsroot</param>
+            <param id="prompt">\[root@cdtaut04 .*?\]#</param>
+        </step>
+        <step id="ssh_command" comment="Send a command to SSH Server, and receive the result from the server">
+            <param id="cmd">cd /cms/13.1/BL162/bin</param>
+        </step>
+        <step id="ssh_command" comment="Send a command to SSH Server, and receive the result from the server">
+            <param id="cmd">./processList.sh</param>
+        </step>
+        <step id="ssh_verify" comment="Verify the result">
+            <param id="value">JBoss Running</param>
+        </step>
+    </case>
+    <after />
+    <fault />
+</root>
+

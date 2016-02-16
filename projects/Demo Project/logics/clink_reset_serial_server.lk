@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <step id="web_browser_open" comment="Open a browser with the input url">
+        <param id="url">http://10.247.7.199</param>
+    </step>
+    <step id="web_element_text_input" comment="Type the text into the element">
+        <param id="locator">id:username</param>
+        <param id="text">admin</param>
+    </step>
+    <step id="web_element_text_input" comment="Type the text into the element">
+        <param id="locator">id:password</param>
+        <param id="text">superuser</param>
+    </step>
+    <step id="web_element_click" comment="Click the element with the locator">
+        <param id="locator">id:login</param>
+    </step>
+    <step id="common_sleep" comment="Some test step may hard to executed and will take lots time, this command will pause the test execution for a specified time and wait for the expected result return.">
+        <param id="millis">1000</param>
+    </step>
+    <step id="web_browser_locate" comment="Relocate the browser with the new url">
+        <param id="url">http://10.247.7.199/manage.cgi/admin/reset-serial</param>
+    </step>
+    <step id="web_element_click" comment="Click the element with the locator">
+        <param id="locator">id:clear_all_btn</param>
+    </step>
+    <step id="web_element_check_click" comment="Check the element with the locator">
+        <param id="locator">xpath://div[@id='portTableContainer']//td[text()='Cisco6513']/parent::tr//input[@type='checkbox']</param>
+    </step>
+    <step id="web_element_click" comment="Click the element with the locator">
+        <param id="locator">name:apply</param>
+    </step>
+    <step id="web_browser_click_alert" comment="Click the alert dialog if it is exist" />
+    <step id="web_verify_element_visible" comment="">
+        <param id="locator">id:yui-dt-table0</param>
+    </step>
+    <step id="web_browser_quit" comment="Close all of the related browsers" />
+</root>
+

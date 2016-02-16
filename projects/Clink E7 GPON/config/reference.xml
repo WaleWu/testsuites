@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <variable name="IXIA_IP" comment="Ip Addr for Ixia Chassis"></variable>
+    <variable name="IXIA_PORT_1" comment=""></variable>
+    <variable name="IXIA_PORT_2" comment=""></variable>
+    <variable name="IXIA_PORT_3" comment=""></variable>
+    <variable name="IXIA_PORT_4" comment=""></variable>
+    <variable name="SrcPort" comment="">11/4</variable>
+    <variable name="DstPort" comment="">11/2</variable>
+</root>
+

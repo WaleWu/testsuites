@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <overview>
+        <author></author>
+        <tmsid></tmsid>
+        <comment></comment>
+    </overview>
+    <before />
+    <case>
+        <step id="cms_osmine_connect" comment="Open TL1 connection">
+            <param id="ip">10.247.48.150</param>
+        </step>
+        <step id="cms_osmine_send" comment="User Login">
+            <param id="cmd">ACT-USER::rootgod:1::root;</param>
+        </step>
+        <step id="cms_osmine_send" comment="Remove existing service">
+            <param id="cmd">DLT-SVC:E7-2N2:ONT-2-1-4-5-ETH-1:1;</param>
+        </step>
+    </case>
+    <after />
+    <fault />
+</root>
+

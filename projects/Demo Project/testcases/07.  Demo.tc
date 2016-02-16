@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <overview>
+        <author></author>
+        <tmsid></tmsid>
+        <comment></comment>
+    </overview>
+    <before />
+    <case>
+        <step id="abacus_connect" comment="Connect the Abacus Server." />
+        <step id="abacus_command" comment="">
+            <param id="cmd">AbaKW::connect localhost</param>
+        </step>
+        <step id="just_for_demo" comment="It is a demo keyword">
+            <param id="param2">D</param>
+        </step>
+    </case>
+    <after />
+    <fault />
+</root>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <overview>
+        <author></author>
+        <tmsid></tmsid>
+        <comment></comment>
+    </overview>
+    <before />
+    <case>
+        <step id="web_browser_open" comment="Open a browser with the input url">
+            <param id="url">http://10.247.7.6</param>
+        </step>
+        <step id="e7_login" comment="" />
+        <step id="e7_navigation" comment="">
+            <param id="path">E7/Shelf1 (MCC)/Card2 (GPON-8)</param>
+        </step>
+        <step id="e7_menu" comment="">
+            <param id="path">Management/Craft Users</param>
+        </step>
+        <step id="e7_action" comment="">
+            <param id="main">Create</param>
+        </step>
+    </case>
+    <after />
+    <fault />
+</root>
+

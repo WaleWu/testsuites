@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <overview>
+        <author></author>
+        <tmsid></tmsid>
+        <comment></comment>
+    </overview>
+    <before />
+    <case>
+        <step id="telnet_connect" comment="Open a telnet connection." disable="true">
+            <param id="ip">10.247.7.199</param>
+            <param id="port">10008</param>
+            <param id="prompt">6513-R14#</param>
+        </step>
+        <step id="clink_reset_serial_server" comment="用WebGUI登录串口服务器,重置Cisco6513的连接端口" />
+        <step id="clink_connect_serial_server" comment="Telnet到Cisco6513设备，重置到初始登录状态" />
+        <step id="telnet_command" comment="发送命令并且接受响应">
+            <param id="cmd">sdfsdgsdfgdfg</param>
+        </step>
+        <step id="telnet_disconnect" comment="关闭Telnet连接" />
+    </case>
+    <after />
+    <fault />
+</root>
+

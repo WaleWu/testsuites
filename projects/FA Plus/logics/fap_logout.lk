@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <step id="web_element_click" comment="Click the element with the locator">
+        <param id="locator">xpath://header//div[@id='user-info']/div[2]</param>
+    </step>
+    <step id="web_element_click" comment="Click the element with the locator">
+        <param id="locator">xpath://header//div[@id='user-info']//a[@id='logout']</param>
+    </step>
+</root>
+

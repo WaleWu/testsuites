@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<soapenv:Envelope xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope">
+	<soapenv:Body>
+		<rpc message-id="175" nodename="NTWK-E7_2" username="rootgod" sessionid="32">
+			<edit-config>
+				<target>
+					<running/>
+				</target>
+				<config>
+					<top>
+						<object operation="delete">
+							<type>Vlan</type>
+							<id>
+								<vlan>333</vlan>
+							</id>
+						</object>
+					</top>
+				</config>
+			</edit-config>
+		</rpc>
+	</soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<soapenv:Envelope xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope">
+<soapenv:Body>
+	<rpc message-id="175" nodename="NTWK-E7_2" username="rootgod" sessionid="32">
+		<edit-config>
+			<target><running/></target>
+			<config>
+				<top>
+					<object operation="create" get-config="true">
+						<type>Vlan</type>
+						<id>
+							<vlan>333</vlan>
+						</id>
+						<name>Create VLAN Test</name>
+						<igmp-mode>flood</igmp-mode>
+						<igmp-prof>
+							<type>VlanIgmpProf</type>
+							<id>
+								<vlanigmpprof>1</vlanigmpprof>
+							</id>
+						</igmp-prof>
+						<dhcp-snoop>false</dhcp-snoop>
+						<mac-force-forw>true</mac-force-forw>
+						<ip-src-verify>false</ip-src-verify>
+						<mac-learn>true</mac-learn>
+						<ae-ont-discovery>false</ae-ont-discovery>
+						<pon-tlan>false</pon-tlan>
+						<pon-hairpin>false</pon-hairpin>
+					</object>
+				</top>
+			</config>
+		</edit-config>
+	</rpc>
+</soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <overview>
+        <author></author>
+        <tmsid></tmsid>
+        <comment></comment>
+    </overview>
+    <before />
+    <case>
+        <step id="web_browser_open" comment="Open a browser with the input url">
+            <param id="url">http://bamboo.calix.local/browse/PREM-CI1117-${ONT_VERSION}</param>
+        </step>
+        <step id="web_element_get_element_attribute" comment="">
+            <param id="locator">id:artifact-Package for E7 download</param>
+            <param id="name">href</param>
+            <param id="outVar">ONT_UPGRADE_FILE_PATH</param>
+        </step>
+        <step id="http_download_file" comment="">
+            <param id="url">${ONT_UPGRADE_FILE_PATH}</param>
+            <param id="save_file_path">C:\sdfsdf.zip</param>
+        </step>
+    </case>
+    <after />
+    <fault />
+</root>
+

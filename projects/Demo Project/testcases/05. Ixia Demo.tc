@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <overview>
+        <author></author>
+        <tmsid></tmsid>
+        <comment></comment>
+    </overview>
+    <before />
+    <case>
+        <step id="ixia_net_connect" comment="连接到IXIA TCL Server">
+            <param id="chassis">$IXIA_IP</param>
+            <param id="ports">${SrcPort} ${DstPort}</param>
+        </step>
+        <step id="ixia_net_add_pppox_server" comment="创建 PPPOX Server">
+            <param id="port">${SrcPort}</param>
+        </step>
+        <step id="ixia_net_add_pppox_client" comment="创建 PPPOX Client">
+            <param id="port">${DstPort}</param>
+        </step>
+        <step id="ixia_net_test_control" comment="启动所有协议">
+            <param id="action">Start All Protocols</param>
+        </step>
+        <step id="ixia_net_add_traffic" comment="根据指定参数添加Traffic">
+            <param id="src">12/11</param>
+            <param id="dst">12/12</param>
+            <param id="rate_unit">kbps</param>
+            <param id="frame_size">1024</param>
+        </step>
+        <step id="ixia_net_traffic_control" comment="启动 Traffic">
+            <param id="action">Start</param>
+        </step>
+        <step id="common_sleep" comment="暂停10秒，等产生点数据">
+            <param id="millis">10000</param>
+        </step>
+        <step id="ixia_net_get_traffic_stat" comment="取RX速率并保存在变量中">
+            <param id="element_name">Rx MBit Rate</param>
+            <param id="value">RX_MBIT_RATE</param>
+        </step>
+        <step id="common_verify_number_value" comment="校验速率约等于1Mbit/s,误差范围1%">
+            <param id="expect">1</param>
+            <param id="actual">${RX_MBIT_RATE}</param>
+            <param id="mode">~</param>
+            <param id="deviation">2</param>
+        </step>
+        <step id="common_sleep" comment="暂停10秒">
+            <param id="millis">10000</param>
+        </step>
+        <step id="ixia_net_get_traffic_stat" comment="取Frame速率并保存在变量中">
+            <param id="element_name">Rx Frame Rate</param>
+            <param id="value">FRAME_RATE</param>
+        </step>
+        <step id="ixia_net_get_traffic_stat" comment="取RX Frame值">
+            <param id="element_name">Rx Frames</param>
+            <param id="value">RX_COUNT</param>
+        </step>
+        <step id="ixia_net_traffic_control" comment="关闭Traffic">
+            <param id="action">Stop</param>
+        </step>
+        <step id="ixia_net_test_control" comment="关闭所有协议">
+            <param id="action">Stop All Protocols</param>
+        </step>
+        <step id="ixia_net_get_traffic_stat" comment="取TX Frame值">
+            <param id="element_name">Tx Frames</param>
+            <param id="value">TX_COUNT</param>
+        </step>
+        <step id="common_verify_number_value" comment="校验TX Frame和RX Frame相等" disable="true">
+            <param id="actual">${RX_COUNT}</param>
+            <param id="expect">${TX_COUNT}</param>
+        </step>
+        <step id="ixia_net_get_traffic_stat" comment="取RX Frame值">
+            <param id="element_name">Rx Frames</param>
+            <param id="value">RX_COUNT</param>
+        </step>
+        <step id="common_verify_number_value" comment="校验TX Frame和RX Frame相等">
+            <param id="actual">${RX_COUNT}</param>
+            <param id="expect">${TX_COUNT}</param>
+        </step>
+    </case>
+    <after />
+    <fault />
+</root>
+

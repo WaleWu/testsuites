@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="AUTOMATION_LIB"/>
+	<classpathentry kind="var" path="SELENIUM_LIB"/>
+	<classpathentry kind="var" path="KEYWORD_LIB"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

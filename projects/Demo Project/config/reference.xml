@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <variable name="IXIA_IP" comment="Ip Addr for Ixia Chassis">10.245.252.58</variable>
+    <variable name="SrcPort" comment="">12/11</variable>
+    <variable name="DstPort" comment="">12/12</variable>
+    <variable name="VAR_TEMP" comment="">result of VAR_TEMP</variable>
+</root>
+

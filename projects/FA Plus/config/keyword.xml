@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <keyword id="fap_login_2016-01-04_23.11.23.910">
+        <name>Login Compass</name>
+        <comment></comment>
+        <implement>fap_login</implement>
+        <type>Func</type>
+        <show>1</show>
+        <param id="user">
+            <name></name>
+            <default></default>
+            <values></values>
+            <required>T</required>
+            <comment></comment>
+        </param>
+        <param id="pwd">
+            <name></name>
+            <default></default>
+            <values></values>
+            <required>T</required>
+            <comment></comment>
+        </param>
+    </keyword>
+    <keyword id="com.calix.ccp.Web:navigation_2016-01-04_23.01.25.293">
+        <name>Select Navigation Tree</name>
+        <comment></comment>
+        <implement>com.calix.fap.Web:navigation</implement>
+        <type>Java</type>
+        <show>1</show>
+        <param id="parent">
+            <name>Parent Item</name>
+            <default></default>
+            <values>COMMAND Center\r\nFlow ANALYZE Plus\r\nConsumer CONNECT\r\nCMS\r\nMarketing</values>
+            <required>T</required>
+            <comment></comment>
+        </param>
+        <param id="path">
+            <name>Path</name>
+            <default></default>
+            <values></values>
+            <required>F</required>
+            <comment>Navigation path, exp. </comment>
+        </param>
+        <param id="delimiter">
+            <name>Delimiter</name>
+            <default>/</default>
+            <values></values>
+            <required>T</required>
+            <comment></comment>
+        </param>
+    </keyword>
+    <keyword id="com.calix.ccp.Web:selectMenu_2016-01-04_23.46.03.088">
+        <name>Select Menu Bar</name>
+        <comment></comment>
+        <implement>com.calix.fap.Web:selectMenu</implement>
+        <type>Java</type>
+        <show>1</show>
+        <param id="path">
+            <name>Menu Path</name>
+            <default></default>
+            <values></values>
+            <required>T</required>
+            <comment></comment>
+        </param>
+        <param id="delimiter">
+            <name>Delimiter</name>
+            <default>/</default>
+            <values></values>
+            <required>T</required>
+            <comment></comment>
+        </param>
+    </keyword>
+    <keyword id="com.calix.fap.Web:setValue_2016-01-05_17.38.44.202">
+        <name>Set Filiter Value</name>
+        <comment></comment>
+        <implement>com.calix.fap.Web:setValue</implement>
+        <type>Java</type>
+        <show>1</show>
+        <param id="name">
+            <name>Label Name</name>
+            <default></default>
+            <values></values>
+            <required>T</required>
+            <comment></comment>
+        </param>
+        <param id="value">
+            <name>Value</name>
+            <default></default>
+            <values></values>
+            <required>F</required>
+            <comment></comment>
+        </param>
+    </keyword>
+    <keyword id="com.calix.fap.Web:clickButton_2016-01-06_23.07.01.544">
+        <name>Click Button</name>
+        <comment></comment>
+        <implement>com.calix.fap.Web:clickButton</implement>
+        <type>Java</type>
+        <show>1</show>
+        <param id="text">
+            <name>Button Text</name>
+            <default>Run</default>
+            <values></values>
+            <required>T</required>
+            <comment></comment>
+        </param>
+    </keyword>
+    <keyword id="com.calix.fap.Web:export_2016-01-06_23.10.37.124">
+        <name>Export To File</name>
+        <comment></comment>
+        <implement>com.calix.fap.Web:export</implement>
+        <type>Java</type>
+        <show>1</show>
+        <param id="type">
+            <name>File Type</name>
+            <default></default>
+            <values>CSV\r\nPDF</values>
+            <required>T</required>
+            <comment></comment>
+        </param>
+    </keyword>
+    <keyword id="fap_logout_2016-01-08_15.09.16.230">
+        <name>Logout Compass</name>
+        <comment></comment>
+        <implement>fap_logout</implement>
+        <type>Func</type>
+        <show>1</show>
+    </keyword>
+</root>
+

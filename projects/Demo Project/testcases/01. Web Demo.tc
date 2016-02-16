@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <overview>
+        <author></author>
+        <tmsid></tmsid>
+        <comment></comment>
+    </overview>
+    <before />
+    <case>
+        <step id="web_browser_open" comment="Open E7 web page on firefox">
+            <param id="url">http://10.247.7.6</param>
+        </step>
+        <step id="e7_login" comment="" />
+        <step id="e7_navigation" comment="">
+            <param id="path">E7/ONTs</param>
+        </step>
+        <step id="e7_menu" comment="">
+            <param id="path">Provisioned ONTs/Provisioning</param>
+        </step>
+        <step id="e7_action" comment="">
+            <param id="main">Create</param>
+        </step>
+        <step id="e7_set_radio" comment="">
+            <param id="name">User Assigned ID</param>
+        </step>
+        <step id="e7_set_value" comment="">
+            <param id="name">ONT ID</param>
+            <param id="value">2001</param>
+        </step>
+        <step id="e7_set_value" comment="">
+            <param id="name">ONT Profile</param>
+            <param id="value">712GX</param>
+        </step>
+        <step id="e7_click_button" comment="">
+            <param id="name">OK</param>
+        </step>
+    </case>
+    <after />
+    <fault />
+</root>
+

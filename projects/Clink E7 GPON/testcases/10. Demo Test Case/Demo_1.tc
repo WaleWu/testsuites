@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <overview>
+        <author></author>
+        <tmsid></tmsid>
+        <comment></comment>
+    </overview>
+    <before />
+    <case>
+        <step id="telnet_command" comment="Config 6513">
+            <param id="cmd">configure terminal</param>
+        </step>
+        <step id="telnet_command" comment="Config 6513">
+            <param id="cmd">interface gigabitEthernet 1/17</param>
+        </step>
+        <step id="telnet_command" comment="Config 6513">
+            <param id="cmd">switchport mode access</param>
+        </step>
+        <step id="telnet_command" comment="Config 6513">
+            <param id="cmd">switchport access vlan 721 </param>
+        </step>
+        <step id="telnet_command" comment="Config 6513">
+            <param id="cmd">interface gigabitEthernet 9/8</param>
+        </step>
+        <step id="telnet_command" comment="Config 6513">
+            <param id="cmd">switchport mode trunk</param>
+        </step>
+        <step id="telnet_command" comment="Config 6513">
+            <param id="cmd">switchport trunk allowed vlan 721</param>
+        </step>
+        <step id="telnet_disconnect" comment="" />
+        <step id="telnet_connect" comment="Connect to N3">
+            <param id="ip">10.247.7.6</param>
+            <param id="list">Username: ^e7support|Password:^admin</param>
+            <param id="prompt">&gt;</param>
+        </step>
+        <step id="telnet_command" comment="Provision E7">
+            <param id="cmd">remove eth-svc Data1 from-ont-port 4233/g1</param>
+        </step>
+        <step id="telnet_command" comment="Provision E7">
+            <param id="cmd">delete svc-tag-action Andy_Automation</param>
+        </step>
+        <step id="telnet_command" comment="Provision E7">
+            <param id="cmd">create svc-tag-action Andy_Automation type add-2-tags outer use-svc-vlan inner use-svc-vlan svc-match-list all-untagged</param>
+            <param id="mode">String</param>
+            <param id="value">success</param>
+        </step>
+        <step id="telnet_command" comment="Provision E7">
+            <param id="cmd">add eth-svc Data1 to-ont-port 4233/g1 bw-profile Clink_LC_D11m_U832k svc-tag-action Andy_Automation outer-vlan 711 inner-vlan 1001</param>
+            <param id="mode">String</param>
+            <param id="value">success</param>
+        </step>
+        <step id="ixia_net_connect" comment="Connect the Ixia TCL Server.">
+            <param id="chassis">10.247.4.203</param>
+            <param id="ports">${SrcPort} ${DstPort}</param>
+        </step>
+        <step id="ixia_net_add_pppox_server" comment="Create PPPOX Server">
+            <param id="port">${SrcPort}</param>
+            <param id="vlan_id_outer">711</param>
+        </step>
+        <step id="ixia_net_add_pppox_client" comment="Create PPPOX Client">
+            <param id="port">${DstPort}</param>
+            <param id="vlan_id_outer">721</param>
+        </step>
+        <step id="ixia_net_test_control" comment="Start Protocols">
+            <param id="action">Start All Protocols</param>
+        </step>
+        <step id="ixia_net_add_traffic" comment="Add Traffic Downstream">
+            <param id="src">${SrcPort}</param>
+            <param id="dst">${DstPort}</param>
+            <param id="rate_unit">mbps</param>
+            <param id="frame_size">1024</param>
+            <param id="rate_value">12</param>
+        </step>
+        <step id="ixia_net_add_traffic" comment="Add Traffic Upstream">
+            <param id="src">${DstPort}</param>
+            <param id="dst">${SrcPort}</param>
+            <param id="rate_unit">mbps</param>
+            <param id="frame_size">1024</param>
+            <param id="rate_value">1</param>
+        </step>
+        <step id="ixia_net_traffic_control" comment="Start Traffic">
+            <param id="action">Start</param>
+        </step>
+        <step id="common_sleep" comment="Wait 10s until traffic is stable">
+            <param id="millis">20000</param>
+        </step>
+        <step id="ixia_net_get_traffic_stat" comment="Verify Traffic Statistics">
+            <param id="element_name">Rx Bit Rate</param>
+            <param id="value">RX_BIT_RATE_DS</param>
+        </step>
+        <step id="common_verify_number_value" comment="Verify Traffic Statistics">
+            <param id="expect">11000000</param>
+            <param id="actual">${RX_BIT_RATE_DS}</param>
+            <param id="mode">~</param>
+            <param id="deviation">5</param>
+        </step>
+        <step id="ixia_net_get_traffic_stat" comment="Verify Traffic Statistics">
+            <param id="element_name">Rx Bit Rate</param>
+            <param id="value">RX_BIT_RATE_US</param>
+            <param id="traffic_index">1</param>
+        </step>
+        <step id="common_verify_number_value" comment="Verify Traffic Statistics">
+            <param id="expect">800000</param>
+            <param id="actual">${RX_BIT_RATE_US}</param>
+            <param id="mode">~</param>
+            <param id="deviation">5</param>
+        </step>
+        <step id="ixia_net_traffic_control" comment="Stop Traffic">
+            <param id="action">Stop</param>
+        </step>
+        <step id="telnet_command" comment="Recover background service">
+            <param id="cmd">remove eth-svc Data1 from-ont-port 4233/g1</param>
+            <param id="mode">String</param>
+            <param id="value">success</param>
+        </step>
+        <step id="telnet_command" comment="Recover background service">
+            <param id="cmd">add eth-svc Data1 to-ont-port 4233/g1 bw-profile Clink_LC_D2048k_U896k svc-tag-action Clink_Add2 outer-vlan 654 inner-vlan 1140</param>
+            <param id="mode">String</param>
+            <param id="value">success</param>
+        </step>
+    </case>
+    <after />
+    <fault />
+</root>
+

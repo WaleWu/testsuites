@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <step id="web_element_text_input" comment="Type the text into the element">
+        <param id="locator">name:userName</param>
+        <param id="text">&amp;{user}</param>
+    </step>
+    <step id="web_element_text_input" comment="Type the text into the element">
+        <param id="locator">name:password</param>
+        <param id="text">&amp;{pwd}</param>
+    </step>
+    <step id="web_element_click" comment="Click the element with the locator">
+        <param id="locator">xpath://input[@value='Login']</param>
+    </step>
+</root>
+

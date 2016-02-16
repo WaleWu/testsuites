@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+		<keyword id='just_for_demo'>
+			<name>Demo Customized Keyword</name>
+			<comment>It is a demo keyword</comment>
+			<implement>cn.wale.Test:test</implement>
+			<show>1</show>
+			<param id='param1'>
+				<name>First Parameter</name>
+				<default>Default</default>
+				<values></values>
+				<required>F</required>
+				<comment>First Parameter</comment>
+			</param>
+			<param id='param2'>
+				<name>Second Parameter</name>
+				<default></default>
+				<values></values>
+				<required>T</required>
+				<comment>Second Parameter</comment>
+			</param>
+		</keyword>
+</root>
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root ver="1.0">
+    <overview>
+        <author></author>
+        <tmsid></tmsid>
+        <comment></comment>
+    </overview>
+    <before />
+    <case>
+        <step id="telnet_connect" comment="Telnet到E5-520">
+            <param id="ip">10.201.29.51</param>
+            <param id="prompt">Node151.*?#</param>
+            <param id="list">login:^sysadmin|Password:^sysadmin|Node151.*?#</param>
+        </step>
+        <step id="telnet_command" comment="发送命令并且接受响应">
+            <param id="cmd">paginate false</param>
+        </step>
+        <step id="telnet_disconnect" comment="关闭Telnet连接" />
+    </case>
+    <after />
+    <fault />
+</root>
+
