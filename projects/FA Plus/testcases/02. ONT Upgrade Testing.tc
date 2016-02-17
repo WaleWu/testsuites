@@ -15,7 +15,7 @@
             <param id="zip_file_path">C:\ONT-Ver.${ONT_VERSION}.zip</param>
             <param id="dst_dir">C:\ONT</param>
         </step>
-        <step id="file_unzip_local_file" comment="">
+        <step id="file_unzip_local_file" comment="fdfgdfg">
             <param id="zip_file_path">C:\ONT\rel.zip</param>
             <param id="dst_dir">C:\ONT</param>
         </step>
