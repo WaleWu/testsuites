@@ -7,7 +7,7 @@
     </overview>
     <before />
     <case>
-        <step id="http_download_file" comment="">
+        <step id="http_download_file" comment="dsf">
             <param id="url">http://bamboo.calix.local/browse/PREM-CI1117-${ONT_VERSION}/artifact/shared/Package-for-E7-download/CALIX_P-SERIES_11.1.200.${ONT_VERSION}.zip</param>
             <param id="save_file_path">C:\ONT-Ver.${ONT_VERSION}.zip</param>
         </step>
