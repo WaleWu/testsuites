@@ -19,6 +19,15 @@
             <param id="zip_file_path">C:\ONT\rel.zip</param>
             <param id="dst_dir">C:\ONT</param>
         </step>
+        <step id="ssh_connect" comment="Open a SSH connection">
+            <param id="host">10.245.90.20</param>
+            <param id="user">e7</param>
+            <param id="pwd">admin</param>
+            <param id="prompt">CalixE7\&gt;</param>
+        </step>
+        <step id="ssh_command" comment="Send a command to SSH Server, and receive the result from the server">
+            <param id="cmd">debug</param>
+        </step>
     </case>
     <after />
     <fault />
